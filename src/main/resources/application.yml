@@ -1,0 +1,28 @@
+#server
+server:
+  port: 10000
+
+#jdbc
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: hr
+    password: hr
+
+  #jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    #jpa format
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+  #log
+  output:
+    ansi:
+      enabled: always
+

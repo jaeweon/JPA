@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WRITE</title>
+</head>
+<body>
+    <form th:action="@{/product/write}" method="post" th:object="${product}">
+        <input type="text" th:field="*{productName}" placeholder="상품 이름">
+        <input type="text" th:field="*{productPrice}" placeholder="상품 가격">
+        <input type="text" th:field="*{productStock}" placeholder="상품 재고">
+        <input type="submit" value="등록">
+    </form>
+</body>
+</html>

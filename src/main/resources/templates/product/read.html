@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>READ</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.productName}"></td>
+            <td th:text="${product.productPrice}"></td>
+            <td th:text="${product.productStock}"></td>
+        </tr>
+    </table>
+    <button id="go-update">수정하기</button>
+</body>
+<script th:inline="javascript">
+    let product = [[${product}]]
+    document.getElementById("go-update").addEventListener("click", function(){
+        location.href = `/product/update/${product.id}`;
+    });
+</script>
+</html>
